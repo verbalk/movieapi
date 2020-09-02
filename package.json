@@ -3,12 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reactions/component": "^2.0.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/react-router-dom": "^5.1.5",
+    "add": "^2.0.6",
+    "axios": "^0.20.0",
+    "evergreen-ui": "^5.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-search": "^2.1.1",
+    "styled-components": "^5.1.1",
+    "yarn": "^1.22.5"
   },
   "scripts": {
     "start": "react-scripts start",
