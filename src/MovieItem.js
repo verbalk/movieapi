@@ -5,7 +5,7 @@ import './App.css';
 import styled from 'styled-components';
 import { MovieName } from './MovieName';
 
-export const MovieItem = ({ title, contents, src }) => {
+export const MovieItem = ({ id, title, contents, src }) => {
   return (
     <Pane
       elevation={3}
@@ -32,8 +32,19 @@ export const MovieItem = ({ title, contents, src }) => {
         </Display>
       </Subhead>
       <Button>
-        <Link to="/MovieName/:?movie_id=">상세보기</Link>
-        <Route path="posts/:title" component={MovieName} />
+        <Route path="/MovieName/:id" component={MovieName} />
+        <Link
+          to={{
+            pathname: `/MovieName/${id}`,
+            state: {
+              title,
+              contents,
+              src,
+            },
+          }}
+        >
+          상세보기
+        </Link>
       </Button>
     </Pane>
   );

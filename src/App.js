@@ -6,7 +6,6 @@ import { Pane, Heading, SelectMenu, Button, SearchInput } from 'evergreen-ui';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
 import { MovieList } from './MovieList';
-import { MovieName } from './MovieName';
 
 function App() {
   const [movieItems, setMovieItems] = useState(null);
@@ -52,11 +51,8 @@ function App() {
           </Pane>
         </Pane>
       </Top>
-      <Route path="/:movieName" exact>
-        {<MovieName />}
-        {/* <MovieList movieItems={movieItems} text={text} genres={genres} /> */}
-      </Route>
-      <Route path="/" exact>
+
+      <Route path="/" exact={true}>
         <Row>
           {' '}
           <ContainerLeft>

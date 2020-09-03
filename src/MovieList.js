@@ -40,12 +40,6 @@ export const MovieList = ({ movieItems, text, genres }) => {
   );
 };
 
-const Row = styled.div`
-  width: 100%;
-  height: 100%;
-  clear: both;
-  margin-top: 4px;
-`;
 const ContainerRight = styled.div`
   background: none;
   width: 70%;
