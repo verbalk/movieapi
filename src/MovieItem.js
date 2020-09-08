@@ -1,11 +1,11 @@
 import React from 'react';
-import { Pane, LayoutAutoIcon, Button } from 'evergreen-ui';
+import { Pane, LayoutAutoIcon, Button, Badge, FilmIcon } from 'evergreen-ui';
 import { Route, Link } from 'react-router-dom';
 import './App.css';
 import styled from 'styled-components';
 import { MovieName } from './MovieName';
 
-export const MovieItem = ({ id, title, contents, src, genres }) => {
+export const MovieItem = ({ id, title, contents, src, runtime }) => {
   console.log(id);
   return (
     <Pane
@@ -24,10 +24,18 @@ export const MovieItem = ({ id, title, contents, src, genres }) => {
       <Route path="/MovieName" component={MovieName} />
 
       <MainMovieimg src={src} alt="영화썸네일"></MainMovieimg>
+
       <Header>{title}</Header>
       <Subhead height="600px" size={300}>
         <Display>
-          <LayoutAutoIcon size={12} color="#85a5ff" marginRight={8} />
+          <FilmIcon size={12} color="#85a5ff" marginRight={8} />
+          {runtime}
+          <LayoutAutoIcon
+            size={12}
+            color="#85a5ff"
+            marginRight={8}
+            marginLeft={8}
+          />
           {contents}
         </Display>
       </Subhead>

@@ -33,6 +33,7 @@ export const MovieList = ({ movieItems, text, genres }) => {
                 id={movieItem.id}
                 title={movieItem.title}
                 contents={movieItem.rating}
+                runtime={movieItem.runtime}
                 src={movieItem.medium_cover_image}
               />
             );
