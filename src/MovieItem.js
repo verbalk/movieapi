@@ -1,11 +1,11 @@
 import React from 'react';
-import { Pane, StarIcon, Button } from 'evergreen-ui';
+import { Pane, LayoutAutoIcon, Button } from 'evergreen-ui';
 import { Route, Link } from 'react-router-dom';
 import './App.css';
 import styled from 'styled-components';
 import { MovieName } from './MovieName';
 
-export const MovieItem = ({ id, title, contents, src }) => {
+export const MovieItem = ({ id, title, contents, src, genres }) => {
   console.log(id);
   return (
     <Pane
@@ -15,24 +15,23 @@ export const MovieItem = ({ id, title, contents, src }) => {
       height={500}
       overflow="scroll"
       margin={24}
-      padding={2}
+      padding={4}
       display="flex"
-      justifyContent="center"
-      alignItems="center"
+      justifyContent="auto"
+      alignItems="auto"
       flexDirection="column"
     >
       <Route path="/MovieName" component={MovieName} />
 
-      <img src={src} alt="영화썸네일"></img>
+      <MainMovieimg src={src} alt="영화썸네일"></MainMovieimg>
       <Header>{title}</Header>
-
       <Subhead height="600px" size={300}>
         <Display>
-          <StarIcon size={12} color="#85a5ff" />
+          <LayoutAutoIcon size={12} color="#85a5ff" marginRight={8} />
           {contents}
         </Display>
       </Subhead>
-      <Button>
+      <Button width={264} margin="auto">
         <Link
           to={{
             pathname: `/MovieName/${id}`,
@@ -43,7 +42,7 @@ export const MovieItem = ({ id, title, contents, src }) => {
             },
           }}
         >
-          상세보기
+          <p>상세보기</p>
         </Link>
       </Button>
     </Pane>
@@ -51,16 +50,24 @@ export const MovieItem = ({ id, title, contents, src }) => {
 };
 
 const Header = styled.span`
-  font-size: 13px;
-  text-align: center;
+  font-size: 20px;
+  width: 230px;
+  line-height: 26px;
+  text-align: left;
   padding: 12px 8px 4px 8px;
 `;
 const Subhead = styled.span`
   font-size: 18px;
   font-weight: bold;
-  padding: 4px 24px;
+  padding: 4px 8px;
+  text-align: right;
   color: #4e7496;
 `;
 const Display = styled.div`
   display: contents;
+`;
+const MainMovieimg = styled.img`
+  margin: auto;
+  width: 95%;
+  margin-top: 2%;
 `;
