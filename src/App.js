@@ -3,7 +3,8 @@ import './App.css';
 import styled from 'styled-components';
 import Component from '@reactions/component';
 import { Pane, Heading, SelectMenu, Button, SearchInput } from 'evergreen-ui';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+
 import axios from 'axios';
 import { MovieList } from './MovieList';
 import { MovieName } from './MovieName';
@@ -32,7 +33,7 @@ function App() {
           <Pane flex={1} alignItems="center" display="flex">
             <Heading display="contents" color={'white'} size={400}>
               <img style={{ marginRight: 4 }} src="/glogow.svg" alt="logo" />
-              GHOST MOVIE
+              <Link to={'/'}> GHOST MOVIE</Link>
             </Heading>
           </Pane>
 

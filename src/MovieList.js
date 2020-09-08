@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { MovieItem } from './MovieItem';
 import './App.css';
-export const MovieList = ({ movieItems, text, genres }) => {
+export const MovieList = ({ movieItems, text, genres, setText }) => {
   return (
     <ContainerRight>
       {movieItems &&
